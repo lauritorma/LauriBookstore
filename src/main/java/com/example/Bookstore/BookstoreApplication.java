@@ -20,11 +20,7 @@ public class BookstoreApplication {
 	@Bean
 	public CommandLineRunner demo(BookRepository repository) {
 		return (args) -> {
-			Book a = new Book("Harry Potter","J.K Rowling", "20", "12345", "2021");
-			Book b = new Book("Koiramäki", "Mauri Kunnas", "20", "951114399", "1996" );
 			
-			repository.save(a);
-			repository.save(b);
 	 
 	};
 	}
