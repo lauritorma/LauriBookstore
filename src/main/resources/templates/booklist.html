@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
 <meta charset="ISO-8859-1">
 <title>Book list</title>
 </head>
 <body>
 	<h1>Books</h1>
-	<table>
+	<table  class="table table-striped">
 		<tbody>
 			<tr>
 				<td><b>Title</b></td>
@@ -14,6 +15,8 @@
 				<td><b>Year</b></td>
 				<td><b>ISBN</b></td>
 				<td><b>Price</b></td>
+				<td></td>
+				<td></td>
 				
 			</tr>
 			<tr th:each = "booklist : ${books}">
@@ -22,14 +25,14 @@
 				<td th:text="${booklist.yearPublished}"></td>
 				<td th:text="${booklist.isbn}"></td>
 				<td th:text="${booklist.price}"></td>
-					<td><a th:href="@{/delete/{id}(id=${booklist.id})}">Delete</a></td> 
-					<td><a th:href="@{/edit/{id}(id=${booklist.id})}">Edit</a></td>  
+					<td><a class="btn btn-danger"  th:href="@{/delete/{id}(id=${booklist.id})}">Delete</a></td> 
+					<td><a class="btn btn-success" th:href="@{/edit/{id}(id=${booklist.id})}">Edit</a></td>  
 				
 			</tr>
 		
 		</tbody>
 	</table>
-	<a href="/add">Add Book</a> 
+	<a class="btn btn-success" href="/add">Add Book</a> 
 	
 
 
