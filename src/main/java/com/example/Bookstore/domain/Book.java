@@ -15,8 +15,8 @@ public class Book {
 	private Long id;
 	private String title,author,yearPublished,isbn,price;
 	
-	 @ManyToOne
-	 @JoinColumn(name = "categoryid")
+	@ManyToOne
+	@JoinColumn(name = "categoryid")
 	private Category category;
 	
 	public Category getCategory() {
