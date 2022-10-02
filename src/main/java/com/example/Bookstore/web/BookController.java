@@ -19,12 +19,15 @@ import com.example.Bookstore.domain.BookRepository;
 import com.example.Bookstore.domain.CategoryRepository;
 
 
+
+
 @Controller
 public class BookController {
 		@Autowired
 		private BookRepository repository;
 		@Autowired
 		private CategoryRepository crepository;
+		
 	
 		// Show all books
 	@RequestMapping(value="/login")
@@ -72,7 +75,7 @@ public class BookController {
     //Delete book
     
     @GetMapping("/delete/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public String deleteBook(@PathVariable("id") Long bookId, Model model) {
     	repository.deleteById(bookId);
     	return "redirect:/booklist";

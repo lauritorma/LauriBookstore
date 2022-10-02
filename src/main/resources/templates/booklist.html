@@ -29,7 +29,7 @@
 				<td th:text="${booklist.isbn}"></td>
 				<td th:text="${booklist.price}"></td>
 				<td th:text="${booklist.category.name}"></td>
-					<td sec:authorize="hasRole('ADMIN')"><a class="btn btn-danger"  th:href="@{/delete/{id}(id=${booklist.id})}">Delete</a></td> 
+					<td sec:authorize="hasAuthority('ADMIN')"><a class="btn btn-danger"  th:href="@{/delete/{id}(id=${booklist.id})}">Delete</a></td> 
 					<td><a class="btn btn-success" th:href="@{/edit/{id}(id=${booklist.id})}">Edit</a></td>  
 				
 			</tr>
