@@ -10,6 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import com.example.Bookstore.domain.Book;
 import com.example.Bookstore.domain.BookRepository;
 import com.example.Bookstore.domain.Category;
 import com.example.Bookstore.domain.CategoryRepository;
@@ -28,6 +29,7 @@ public class BookstoreApplication {
 	
 	public CommandLineRunner demo(BookRepository brepository, CategoryRepository crepository, UserRepository urepository) {
 		return (args) -> {
+			
 			log.info("save some categories for books");
 			crepository.save(new Category("IT"));
 			crepository.save(new Category("Sci-Fi"));
@@ -35,6 +37,11 @@ public class BookstoreApplication {
 			crepository.save(new Category("History"));
 			crepository.save(new Category("Children"));
 			crepository.save(new Category("Study"));
+			
+			//Ohjelmaan tulee whitelabel error, jos tallentaa in-memory kirjoja, mutta testissä toimii. Liittyy jotenkin kategoriaan.
+//			log.info("save some books for tests");
+//			brepository.save(new Book("IT", "King", "1999", "12345", "20"));
+//			brepository.save(new Book("Aapinen", "Aapiskukko", "2005", "121212", "10"));
 			
 			// Create users: admin/admin user/user
 			
