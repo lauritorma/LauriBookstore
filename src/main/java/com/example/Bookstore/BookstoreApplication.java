@@ -27,7 +27,7 @@ public class BookstoreApplication {
 	
 	@Bean
 	
-	public CommandLineRunner demo(BookRepository brepository, CategoryRepository crepository, UserRepository urepository) {
+	public CommandLineRunner demo(BookRepository brepository, CategoryRepository crepository) {
 		return (args) -> {
 			
 			log.info("save some categories for books");
@@ -38,17 +38,21 @@ public class BookstoreApplication {
 			crepository.save(new Category("Children"));
 			crepository.save(new Category("Study"));
 			
-			//Ohjelmaan tulee whitelabel error, jos tallentaa in-memory kirjoja, mutta testissä toimii. Liittyy jotenkin kategoriaan.
+			//Ohjelmaan tulee whitelabel error, jos tallentaa in-memory kirjoja,
+			//mutta testissä toimii. Liittyy jotenkin kategoriaan.
+			
 //			log.info("save some books for tests");
 //			brepository.save(new Book("IT", "King", "1999", "12345", "20"));
 //			brepository.save(new Book("Aapinen", "Aapiskukko", "2005", "121212", "10"));
 			
+			
+			
 			// Create users: admin/admin user/user
 			
-			User user1 = new User("User", "$2a$10$mxoLJBX.EsI9uK2.Iflc8..CWyXnjNvYYN2smaQahl2Naw9zwuAFu", "user@gmail.com", "USER");
-			User user2 = new User("Admin", "$2a$10$1qPPp5ZsN/fJD/8HjCy0fu/kljuGBk5lVm8n2742Ehxlq2FTdIoAa", "admin@gmail.com", "ADMIN");
-			urepository.save(user1);
-			urepository.save(user2);
+//			User user1 = new User("User", "$2a$10$mxoLJBX.EsI9uK2.Iflc8..CWyXnjNvYYN2smaQahl2Naw9zwuAFu", "user@gmail.com", "USER");
+//			User user2 = new User("Admin", "$2a$10$1qPPp5ZsN/fJD/8HjCy0fu/kljuGBk5lVm8n2742Ehxlq2FTdIoAa", "admin@gmail.com", "ADMIN");
+//			urepository.save(user1);
+//			urepository.save(user2);
 			
 			
 	 
