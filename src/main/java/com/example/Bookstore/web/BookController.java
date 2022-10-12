@@ -20,16 +20,6 @@ import com.example.Bookstore.domain.CategoryRepository;
 
 @Controller
 public class BookController {
-	
-	
-	@Controller
-	static class FaviconController {
-	 
-	    @GetMapping("favicon.ico")
-	    @ResponseBody
-	    void returnNoFavicon() {
-	    }
-	}
     @Autowired
     private BookRepository repository;
     @Autowired
