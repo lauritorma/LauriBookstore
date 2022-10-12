@@ -27,7 +27,7 @@ public class BookstoreApplication {
 	
 	@Bean
 	
-	public CommandLineRunner demo(BookRepository brepository, CategoryRepository crepository) {
+	public CommandLineRunner demo(BookRepository brepository, CategoryRepository crepository, UserRepository urepository) {
 		return (args) -> {
 			
 			log.info("save some categories for books");
@@ -49,10 +49,10 @@ public class BookstoreApplication {
 			
 			// Create users: admin/admin user/user
 			
-//			User user1 = new User("User", "$2a$10$mxoLJBX.EsI9uK2.Iflc8..CWyXnjNvYYN2smaQahl2Naw9zwuAFu", "user@gmail.com", "USER");
-//			User user2 = new User("Admin", "$2a$10$1qPPp5ZsN/fJD/8HjCy0fu/kljuGBk5lVm8n2742Ehxlq2FTdIoAa", "admin@gmail.com", "ADMIN");
-//			urepository.save(user1);
-//			urepository.save(user2);
+			User user1 = new User("User", "$2a$10$mxoLJBX.EsI9uK2.Iflc8..CWyXnjNvYYN2smaQahl2Naw9zwuAFu", "user@gmail.com", "USER");
+			User user2 = new User("Admin", "$2a$10$1qPPp5ZsN/fJD/8HjCy0fu/kljuGBk5lVm8n2742Ehxlq2FTdIoAa", "admin@gmail.com", "ADMIN");
+			urepository.save(user1);
+			urepository.save(user2);
 			
 			
 	 
