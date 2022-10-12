@@ -38,12 +38,20 @@ public class BookController {
         return "booklist";
     }
 
-//    // Show all books
-//    @GetMapping("/")
-//    public String otherBookList(Model model) {
-//        model.addAttribute("books", repository.findAll());
-//        return "booklist";
-//    }
+    // Show all books
+    @GetMapping("/")
+    public String otherBookList(Model model) {
+        model.addAttribute("books", repository.findAll());
+        return "booklist";
+    }
+    
+    @GetMapping("/favicon.ico")
+    public String anotherBookList(Model model) {
+        model.addAttribute("books", repository.findAll());
+        return "booklist";
+    }
+    
+    
 
     // RESTful service to get all books
 
