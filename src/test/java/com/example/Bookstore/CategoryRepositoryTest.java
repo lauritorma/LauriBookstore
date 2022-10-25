@@ -34,7 +34,7 @@ public class CategoryRepositoryTest {
 	public void createNewCategory() {
 		Category category = new Category("Comics");
 		repository.save(category);
-		assertThat(category.getId()).isNotNull();
+		assertThat(category.getCategoryid()).isNotNull();
 	}
 	
 	@Test

@@ -46,13 +46,6 @@ public class Category {
 
 	}
 
-	public Long getId() {
-		return categoryid;
-	}
-
-	public void setId(Long id) {
-		this.categoryid = id;
-	}
 
 	public String getName() {
 		return name;
